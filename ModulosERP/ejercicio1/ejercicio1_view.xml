@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+    <record model="ir.ui.view" id="view_school_professor_form">
+        <field name="name">school.professor.form</field>
+        <field name="model">school.professor</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="school.professor">
+                <field name="name" select="1"/>
+                <field name="contract" select="2"/>
+                <field name="partner_id" select="0"/>
+                <field name="address_id" select="0"/>
+                <field name="hours_available" select="0"/>
+                <field name="course_ids" colspan="4" select="0"/>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_school_professor_tree">
+        <field name="name">school.professor.tree</field>
+        <field name="model">school.professor</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="school.professor">
+                <field name="name"/>
+                <field name="contract"/>
+                <field name="partner_id"/>
+                <field name="address_id"/>
+                <field name="hours_available"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_school_professor">
+        <field name="name">Professors>></field>
+        <field name="res_model">school.professor</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+        
+    <record model="ir.ui.view" id="view_school_course_form">
+        <field name="name">school.course.form</field>
+        <field name="model">school.course</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="school.course">
+                <field name="name" select="1"/>
+                <field name="subject" select="2"/>
+                <field name="prof_id" select="0"/>
+                <field name="hours_total" select="0"/>
+                <field name="requirements" select="0"/>
+                <field name="website" select="0"/>
+                <field name="date" select="0"/>
+                <field name="note" colspan="4" select="0"/>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_school_course_tree">
+        <field name="name">school.course.tree</field>
+        <field name="model">school.course</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="school.course">
+                <field name="name"/>
+                <field name="subject"/>
+                <field name="prof_id"/>
+                <field name="hours_total"/>
+                <field name="requirements"/>
+                <field name="website"/>
+                <field name="date"/>
+                <field name="note"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_school_course">
+        <field name="name">Courses</field>
+        <field name="res_model">school.course</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+        
+    <record model="ir.ui.view" id="view_school_event_form">
+        <field name="name">school.event.form</field>
+        <field name="model">school.event</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="school.event">
+                <field name="course_id" select="1"/>
+                <field name="date" select="2"/>
+                <field name="date_end" select="0"/>
+                <field name="name" select="0"/>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_school_event_tree">
+        <field name="name">school.event.tree</field>
+        <field name="model">school.event</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="school.event">
+                <field name="course_id"/>
+                <field name="date"/>
+                <field name="date_end"/>
+                <field name="name"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_school_event">
+        <field name="name">Calendar of Courses>></field>
+        <field name="res_model">school.event</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+        
+    <record model="ir.ui.view" id="view_school_student_form">
+        <field name="name">school.student.form</field>
+        <field name="model">school.student</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="school.student">
+                <field name="name" select="1"/>
+                <field name="surname" select="2"/>
+                <field name="IDNum" select="0"/>
+                <field name="suscriptions_ids" colspan="4" select="0"/>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_school_student_tree">
+        <field name="name">school.student.tree</field>
+        <field name="model">school.student</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="school.student">
+                <field name="name"/>
+                <field name="surname"/>
+                <field name="IDNum"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_school_student">
+        <field name="name">Students>></field>
+        <field name="res_model">school.student</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+	<menuitem name="Courses" id="menu_school"/>
+	<menuitem name="Calendar of Courses" id="menu_school_event" parent="menu_school"/>
+    <menuitem name="Students" id="menu_school_student" action="action_school_student" parent="menu_school"/>
+	<menuitem name="Configuration" id="menu_school_configuration" parent="menu_school"/>
+	<menuitem name="Professors" id="menu_school_professor" action="action_school_professor" parent="menu_school_configuration"/>
+    <menuitem name="Courses" id="menu_school_course" action="action_school_course" parent="menu_school_configuration"/>
+
+</data>
+</openerp>
