@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+    <record model="ir.ui.view" id="view_guards_soldier_form">
+        <field name="name">guards.soldier.form</field>
+        <field name="model">guards.soldier</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="guards.soldier">
+                <field name="id_soldier" select="1"/>
+                <field name="name" select="2"/>
+                <field name="quarter" select="0"/>
+                <field name="rank" select="0"/>
+                <field name="soldier_ids" colspan="4" select="0"/>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_guards_soldier_tree">
+        <field name="name">guards.soldier.tree</field>
+        <field name="model">guards.soldier</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="guards.soldier">
+                <field name="id_soldier"/>
+                <field name="name"/>
+                <field name="quarter"/>
+                <field name="rank"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_guards_soldier">
+        <field name="name">guards_soldier</field>
+        <field name="res_model">guards.soldier</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+        
+    <record model="ir.ui.view" id="view_guards_quarter_form">
+        <field name="name">guards.quarter.form</field>
+        <field name="model">guards.quarter</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="guards.quarter">
+                <field name="name" select="1"/>
+                <field name="quarter_address" select="2"/>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_guards_quarter_tree">
+        <field name="name">guards.quarter.tree</field>
+        <field name="model">guards.quarter</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="guards.quarter">
+                <field name="name"/>
+                <field name="quarter_address"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_guards_quarter">
+        <field name="name">guards_quarter</field>
+        <field name="res_model">guards.quarter</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+        
+    <record model="ir.ui.view" id="view_guards_guard_form">
+        <field name="name">guards.guard.form</field>
+        <field name="model">guards.guard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="guards.guard">
+                <field name="name" select="1"/>
+                <field name="description" select="2"/>
+                <field name="date" select="0"/>
+                <field name="hour" select="0"/>
+                <field name="guard" colspan="4" select="0"/>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_guards_guard_tree">
+        <field name="name">guards.guard.tree</field>
+        <field name="model">guards.guard</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="guards.guard">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="date"/>
+                <field name="hour"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_guards_guard">
+        <field name="name">guards_guard</field>
+        <field name="res_model">guards.guard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+	<!-- Menus del ejercicio del Examen de las Unidades 5 y 6-->
+	<menuitem name="Guards" id="menu_guards"/>
+	<menuitem name="Soldiers" id="menu_guards_soldier" action="action_guards_soldier" parent="menu_guards"/>
+	<menuitem name="Quarters" id="menu_guards_quarter" action="action_guards_quarter" parent="menu_guards"/>
+	<menuitem name="Guards" id="menu_guards_guard" action="action_guards_guard" parent="menu_guards"/>	
+        
+</data>
+</openerp>
