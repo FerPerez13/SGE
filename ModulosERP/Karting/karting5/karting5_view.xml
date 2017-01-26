@@ -32,7 +32,6 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem name="Karting/Configuration/Circuit" id="menu_karting_circuit" action="action_karting_circuit"/>
 
         
     <record model="ir.ui.view" id="view_karting_diary_form">
@@ -66,7 +65,6 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form,calendar</field>
     </record>
-    <menuitem name="Karting/Diary" id="menu_karting_diary" action="action_karting_diary"/>
 
         
     <record model="ir.ui.view" id="view_karting_racer_form">
@@ -108,7 +106,6 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form,calendar</field>
     </record>
-    <menuitem name="Karting/Racer" id="menu_karting_racer" action="action_karting_racer"/>
 
         
     <record model="ir.ui.view" id="view_karting_racer_group_form">
@@ -140,7 +137,6 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem name="Karting/Race Groups" id="menu_karting_racer_group" action="action_karting_racer_group"/>
 
         
     <record model="ir.ui.view" id="view_karting_diary_racer_form">
@@ -181,7 +177,6 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form,calendar</field>
     </record>
-    <menuitem name="Karting/Racers of day" id="menu_karting_diary_racer" action="action_karting_diary_racer"/>
 
         
     <record model="ir.ui.view" id="view_karting_kart_type_form">
@@ -216,7 +211,6 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem name="Karting/Configuration/Types of karts" id="menu_karting_kart_type" action="action_karting_kart_type"/>
 
         
     <record model="ir.ui.view" id="view_karting_round_form">
@@ -249,8 +243,16 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem name="Karting/Rounds" id="menu_karting_round" action="action_karting_round"/>
 
+	<menuitem name="Karting" id="menu_karting"/>
+	<menuitem name="Karting/Diary" id="menu_karting_diary" action="action_karting_diary" parent="menu_karting"/>
+	<menuitem name="Karting/Racer" id="menu_karting_racer" action="action_karting_racer" parent="menu_karting"/>
+	<menuitem name="Karting/Race Groups" id="menu_karting_racer_group" action="action_karting_racer_group" parent="menu_karting"/>
+	<menuitem name="Karting/Racers of day" id="menu_karting_diary_racer" action="action_karting_diary_racer" parent="menu_karting"/>
+	<menuitem name="Karting/Rounds" id="menu_karting_round" action="action_karting_round" parent="menu_karting"/>
+	<menuitem name="Karting/Configuration" id="menu_karting_configuration" parent="menu_karting"/>
+	<menuitem name="Karting/Configuration/Circuit" id="menu_karting_circuit" action="action_karting_circuit" parent="menu_karting_configuration"/>
+	<menuitem name="Karting/Configuration/Types of karts" id="menu_karting_kart_type" action="action_karting_kart_type" parent="menu_karting_configuration"/>
         
 </data>
 </openerp>

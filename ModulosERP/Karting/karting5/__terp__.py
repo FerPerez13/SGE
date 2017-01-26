@@ -1,5 +1,5 @@
 {
-        "name" : "karting2",
+        "name" : "karting5",
         "version" : "0.1",
         "author" : "Tiny",
         "website" : "http://openerp.com",
@@ -8,6 +8,6 @@
         "depends" : ['base'],
         "init_xml" : [ ],
         "demo_xml" : [ ],
-        "update_xml" : ['karting2_view.xml'],
+        "update_xml" : ['karting5_view.xml'],
         "installable": True
 }

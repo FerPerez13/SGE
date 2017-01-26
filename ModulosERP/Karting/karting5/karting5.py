@@ -41,7 +41,7 @@ class karting_diary(osv.osv):
     _columns = {
         'date': fields.date('Dia', size=64),
         'round_id': fields.one2many('karting.round','round_id',required=True),
-        'circuit_id': fields.many2one('karting_circuit','Circuit','required=True),
+        'circuit_id': fields.many2one('karting.circuit','Circuit',required=True),
     }
 karting_diary()
 
@@ -52,17 +52,18 @@ class karting_racer(osv.osv):
         'surname': fields.char('Apellidos',size=64,required=True),
         'date': fields.date('Fecha nacimiento', required=True),
         'country': fields.many2one('res.country','Pais',required=True),
-        'country_state_id': fields.many2one('res.country_state','Poblacion',required=True),
+        'country_state_id': fields.many2one('res.country.state','Poblacion',required=True),
         'email': fields.char('E-Mail', size=64,required=True),
-        'diary_racer_id': fields.one2many('karting.diary.racer',required=True),
+        'diary_racer_id': fields.one2many('karting.diary.racer','kart_id',required=True),
     }
 karting_racer()
 
 class karting_racer_group(osv.osv):
+    """(NULL)"""
     _name = 'karting.racer.group'
     _columns = {
         'name': fields.char('Nombre', size=64, required=True),
-        'racer_group_id': fields.one2many('karting.diary.racer','racer_id',required=True),
+        'racer_group_id': fields.one2many('karting.diary.racer','racers_id',required=True),
     }
 karting_racer_group()
 
