@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+    <record model="ir.ui.view" id="view_tfcs_tfc_form">
+        <field name="name">tfcs.tfc.form</field>
+        <field name="model">tfcs.tfc</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="tfcs.tfc">
+                <field name="number" select="1"/>
+                <field name="name" select="2"/>
+                <field name="date" select="0"/>
+                <field name="mark" select="0"/>
+                <field name="notes" colspan="4" select="0"/>
+                <field name="students_ids" colspan="4" select="0"/>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_tfcs_tfc_tree">
+        <field name="name">tfcs.tfc.tree</field>
+        <field name="model">tfcs.tfc</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="tfcs.tfc">
+                <field name="number"/>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="mark"/>
+                <field name="notes"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_tfcs_tfc">
+        <field name="name">tfcs_tfc</field>
+        <field name="res_model">tfcs.tfc</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+        
+    <record model="ir.ui.view" id="view_tfcs_professor_form">
+        <field name="name">tfcs.professor.form</field>
+        <field name="model">tfcs.professor</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="tfcs.professor">
+                <field name="name" select="1"/>
+                <field name="surname" select="2"/>
+                <field name="employee" select="0"/>
+                <field name="tribunal_ids" colspan="4" select="0"/>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_tfcs_professor_tree">
+        <field name="name">tfcs.professor.tree</field>
+        <field name="model">tfcs.professor</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="tfcs.professor">
+                <field name="name"/>
+                <field name="surname"/>
+                <field name="employee"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_tfcs_professor">
+        <field name="name">tfcs_professor</field>
+        <field name="res_model">tfcs.professor</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+        
+    <record model="ir.ui.view" id="view_tfcs_student_form">
+        <field name="name">tfcs.student.form</field>
+        <field name="model">tfcs.student</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="tfcs.student">
+                <field name="dni" select="1"/>
+                <field name="name" select="2"/>
+                <field name="tfc_id" select="0"/>
+                <field name="tribunal_id" select="0"/>
+                <field name="professor" select="0"/>
+                <field name="contact" select="0"/>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_tfcs_student_tree">
+        <field name="name">tfcs.student.tree</field>
+        <field name="model">tfcs.student</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="tfcs.student">
+                <field name="dni"/>
+                <field name="name"/>
+                <field name="tfc_id"/>
+                <field name="tribunal_id"/>
+                <field name="professor"/>
+                <field name="contact"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_tfcs_student">
+        <field name="name">tfcs_student</field>
+        <field name="res_model">tfcs.student</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+        
+    <record model="ir.ui.view" id="view_tfcs_tribunal_form">
+        <field name="name">tfcs.tribunal.form</field>
+        <field name="model">tfcs.tribunal</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="tfcs.tribunal">
+                <field name="name" select="1"/>
+                <field name="meeting" select="2"/>
+                <field name="professor_ids" colspan="4" select="0"/>
+                <field name="student_ids" colspan="4" select="0"/>
+
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_tfcs_tribunal_tree">
+        <field name="name">tfcs.tribunal.tree</field>
+        <field name="model">tfcs.tribunal</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="tfcs.tribunal">
+                <field name="name"/>
+                <field name="meeting"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_tfcs_tribunal">
+        <field name="name">tfcs_tribunal</field>
+        <field name="res_model">tfcs.tribunal</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+	
+	<menuitem name="TFCs" id="menu_t"/>
+	<menuitem name="TFCs" id="menu_tfcs_tfc" action="action_tfcs_tfc" parent="menu_t"/>
+    <menuitem name="Students" id="menu_tfcs_student" action="action_tfcs_student" parent="menu_t"/>
+	<menuitem name="Configuration" id="menu_tfcs_configuration" parent="menu_t"/>
+	<menuitem name="Professors" id="menu_tfcs_professor" action="action_tfcs_professor" parent="menu_tfcs_configuration"/>
+    <menuitem name="Tribunals" id="menu_tfcs_tribunal" action="action_tfcs_tribunal" parent="menu_tfcs_configuration"/>
+
+
+        
+</data>
+</openerp>
